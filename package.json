@@ -3,7 +3,7 @@
   "version": "0.7.72",
   "scripts": {
     "serve": "vue-cli-service serve --host localhost",
-    "build": "vue-cli-service build",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider vue-cli-service build",
     "lint": "vue-cli-service lint",
     "backend": "node backend/index.js -b",
     "start": "node backend/index.js"
