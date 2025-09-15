@@ -1,25 +1,27 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import ActivityPage from '../views/activityPage.vue'
-import Welcome from '../views/Welcome'
-import Login from '../views/Login.vue'
-import yourActivity from '../views/yourActivity'
-import activeNotices from '@/views/activeNotices'
-import settings from '@/views/settings'
-import err from '@/views/err'
-import Ban from '@/views/Ban'
-import staff from '@/views/staff'
-import profile from '@/views/profile'
-import signup from '@/views/signup'
-import forbidden from '@/views/forbidden'
-import automation from '@/views/automation'
-import wall from '@/views/wall'
-import audit from '@/views/audit'
-import sessions from '@/views/sessions'
-import session from '@/views/session'
-import notReady from '@/views/notReady'
-import tasks from '@/views/tasks' 
+
+// Lazy load components for code splitting
+const Home = () => import('../views/Home.vue')
+const ActivityPage = () => import('../views/activityPage.vue')
+const Welcome = () => import('../views/Welcome')
+const Login = () => import('../views/Login.vue')
+const yourActivity = () => import('../views/yourActivity')
+const activeNotices = () => import('@/views/activeNotices')
+const settings = () => import('@/views/settings')
+const err = () => import('@/views/err')
+const Ban = () => import('@/views/Ban')
+const staff = () => import('@/views/staff')
+const profile = () => import('@/views/profile')
+const signup = () => import('@/views/signup')
+const forbidden = () => import('@/views/forbidden')
+const automation = () => import('@/views/automation')
+const wall = () => import('@/views/wall')
+const audit = () => import('@/views/audit')
+const sessions = () => import('@/views/sessions')
+const session = () => import('@/views/session')
+const notReady = () => import('@/views/notReady')
+const tasks = () => import('@/views/tasks') 
 
 Vue.use(VueRouter)
 
