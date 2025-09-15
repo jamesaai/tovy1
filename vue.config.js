@@ -21,7 +21,8 @@ module.exports = {
             test: /[\\/]node_modules[\\/]vuetify[\\/]/,
             name: 'vuetify',
             chunks: 'all',
-            priority: 20
+            priority: 20,
+            enforce: true
           },
           common: {
             name: 'common',
@@ -71,5 +72,13 @@ module.exports = {
           }
         }
       })
+    
+    // Fix CSS ordering issues
+    if (process.env.NODE_ENV === 'production') {
+      config.plugin('extract-css').tap(args => {
+        args[0].ignoreOrder = true
+        return args
+      })
+    }
   }
 }

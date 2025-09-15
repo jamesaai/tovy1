@@ -5,10 +5,12 @@
     "serve": "NODE_OPTIONS=--openssl-legacy-provider vue-cli-service serve --host localhost",
     "build": "NODE_OPTIONS=--openssl-legacy-provider vue-cli-service build",
     "build:analyze": "node optimize-images-simple.js && NODE_OPTIONS=--openssl-legacy-provider vue-cli-service build",
+    "build:full": "npm run build && node optimize-assets.js",
     "lint": "vue-cli-service lint",
     "backend": "node backend/index.js -b",
     "start": "node backend/index.js",
-    "analyze": "node optimize-images-simple.js"
+    "analyze": "node optimize-images-simple.js",
+    "analyze:build": "node optimize-assets.js"
   },
   "engines": {
     "node": "22.x"
